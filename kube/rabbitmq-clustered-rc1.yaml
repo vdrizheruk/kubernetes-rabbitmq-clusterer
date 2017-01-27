@@ -17,7 +17,7 @@ spec:
       hostname: rabbit1 # hostname is _absolutely_ needed for erlang to know that the local node should be in the cluster!
       containers:
         - name: rabbit1
-          image: localhost:5000/com/example/rabbitmq_clusterer
+          image: vdrizheruk/rabbitmq_clusterer
           env:
             - name: "RABBITMQ_ERLANG_COOKIE"
               value: "super-secret"
