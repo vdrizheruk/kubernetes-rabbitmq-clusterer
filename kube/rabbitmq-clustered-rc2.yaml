@@ -12,13 +12,24 @@ spec:
       name: rabbit2
       labels:
         app: rabbit2
-        type: rabbitmq
+        type: rabbitmq # has to be the same across replication controllers
     spec:
       hostname: rabbit2 # hostname is _absolutely_ needed for erlang to know that the local node should be in the cluster!
+      volumes:
+       - name: rabbitmq
+         hostPath:
+           path: "/srv/service/prod/rabbitmq"
       containers:
         - name: rabbit2
           image: vdrizheruk/rabbitmq_clusterer
           env:
             - name: "RABBITMQ_ERLANG_COOKIE"
               value: "super-secret"
+          volumeMounts:
+            - name: rabbitmq
+              mountPath: "/var/lib/rabbitmq"
+
+
+
+
 
