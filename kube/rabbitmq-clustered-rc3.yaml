@@ -30,8 +30,8 @@ spec:
               mountPath: "/var/lib/rabbitmq"
           resources:
             limits:
-              memory: "768M"
+              memory: "1024M"
               cpu: "300m"
             requests:
-              memory: "786M"
+              memory: "1024M"
               cpu: "300m"
