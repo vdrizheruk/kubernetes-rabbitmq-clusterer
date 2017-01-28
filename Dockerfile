@@ -21,5 +21,3 @@ RUN apt-get update && \
     rabbitmq-plugins enable rabbitmq_clusterer --offline && \
     apt-get purge -y --auto-remove ca-certificates wget
 
-
-
